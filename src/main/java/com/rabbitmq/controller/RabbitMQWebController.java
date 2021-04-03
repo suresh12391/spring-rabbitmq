@@ -24,7 +24,7 @@ public class RabbitMQWebController {
     public String producer(@ModelAttribute Category category) {
 
         rabbitMQSender.convertAndSend(category);
-        log.info("Send data to ma. Category {}, {}", category.getCode(), category.getDescription());
+        log.info("Send data to RabbitMq. Category {}, {}", category.getCode(), category.getDescription());
 
         return "Message sent to the RabbitMQ Successfully";
     }
